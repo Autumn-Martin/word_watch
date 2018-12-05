@@ -11,7 +11,25 @@ $(document).ready(() => {
     })
   .catch(error => console.log({ error }))
 
-})
+  $('.breakDownButton').click( () => {
+    let words = $('.inputField').val()
+    let wordsArr = words.split(" ")
+    for (let word of wordsArr) {
+      const pack = {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({
+          word: { value: word }
+        }),
+      }
+      fetch(`https://wordwatch-api.herokuapp.com/api/v1/words`, pack)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          console.log(data["message"])
+          $('.breakDance').append(`</br><p>${data["message"]}</p>`)
+        })
+    }
+  })
 
-$('.breakDownButton').click( () => {
 })
