@@ -14,6 +14,7 @@ $(document).ready(() => {
   $('.breakDownButton').click( () => {
     let words = $('.inputField').val()
     let wordsArr = words.split(" ")
+    $('.breakDance').html('')
     for (let word of wordsArr) {
       const pack = {
         method: 'POST',
@@ -25,8 +26,7 @@ $(document).ready(() => {
       fetch(`https://wordwatch-api.herokuapp.com/api/v1/words`, pack)
         .then(response => response.json())
         .then(data => {
-          console.log(data);
-          console.log(data["message"])
+
           $('.breakDance').append(`</br><p>${data["message"]}</p>`)
         })
     }

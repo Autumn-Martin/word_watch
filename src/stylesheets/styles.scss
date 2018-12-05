@@ -1,12 +1,13 @@
 @import "./reset";
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Permanent+Marker|Kaushan+Script);
 
 $indigo: #4B0082;
 $light-gray: #ededf5;
 $gray: #555;
 $salmon: #FA8072;
 $fonts: "Open Sans", "Helvetica", sans-serif;
+$logo-font: "Permanent Marker";
 
 body {
   font-family: $fonts;
@@ -39,6 +40,7 @@ main {
     h2 {
       margin-bottom: 10px;
         color: $indigo;
+        font-family: $logo-font;
       span {
       color: $salmon;
       }
@@ -81,6 +83,7 @@ main {
       padding: 10px;
     }
     .word-count {
+      font-family: 'Kaushan Script';
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
