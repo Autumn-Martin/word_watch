@@ -12,3 +12,6 @@ $(document).ready(() => {
   .catch(error => console.log({ error }))
 
 })
+
+$('.breakDownButton').click( () => {
+})
